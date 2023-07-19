@@ -17,8 +17,10 @@ class MainActivity : AppCompatActivity() {
 
         // Example of a call to a native method
         binding.sampleText.text = stringFromJNI()
-        passparam("0")
+        passparam("passparam")
 
+        println("reverseString " +reverseString("reverseString"))
+//
         callKotlinMethod()
     }
     fun javaMethod(message: String) {
@@ -31,7 +33,8 @@ class MainActivity : AppCompatActivity() {
      */
     external fun stringFromJNI(): String
     external fun apiKey(): String
-    external fun passparam(string: String):String
+    external fun passparam(string: String)
+    external fun reverseString(string: String):String
     external fun callKotlinMethod()
     companion object {
         // Used to load the 'ndktest' library on application startup.

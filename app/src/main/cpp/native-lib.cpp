@@ -15,7 +15,7 @@ std::string api_key = "your_api_key";
 
 return env->NewStringUTF(api_key.c_str());
 }
-extern "C" JNIEXPORT jstring JNICALL
+extern "C" JNIEXPORT void JNICALL
 Java_com_app_ndktest_MainActivity_passparam(JNIEnv *env, jobject object, jstring jstr) {
     const char* str = env->GetStringUTFChars(jstr, nullptr);
     if (str != nullptr) {
@@ -37,7 +37,7 @@ Java_com_app_ndktest_MainActivity_callKotlinMethod(JNIEnv* env, jobject /* this 
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_your_package_name_MyClass_reverseString(JNIEnv* env, jobject /* this */, jstring jstr) {
+Java_com_app_ndktest_MainActivity_reverseString(JNIEnv* env, jobject /* this */, jstring jstr) {
     const char* str = env->GetStringUTFChars(jstr, nullptr);
     if (str == nullptr) {
         return nullptr;
